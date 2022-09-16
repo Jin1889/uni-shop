@@ -98,7 +98,7 @@ var components
 try {
   components = {
     mySearch: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/my-search/components/my-search/my-search */ "uni_modules/my-search/components/my-search/my-search").then(__webpack_require__.bind(null, /*! @/uni_modules/my-search/components/my-search/my-search.vue */ 64))
+      return __webpack_require__.e(/*! import() | uni_modules/my-search/components/my-search/my-search */ "uni_modules/my-search/components/my-search/my-search").then(__webpack_require__.bind(null, /*! @/uni_modules/my-search/components/my-search/my-search.vue */ 66))
     }
   }
 } catch (e) {
