@@ -95,6 +95,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
+try {
+  components = {
+    mySearch: function() {
+      return __webpack_require__.e(/*! import() | uni_modules/my-search/components/my-search/my-search */ "uni_modules/my-search/components/my-search/my-search").then(__webpack_require__.bind(null, /*! @/uni_modules/my-search/components/my-search/my-search.vue */ 64))
+    }
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -191,6 +214,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var _default =
 {
   data: function data() {
@@ -211,7 +236,7 @@ var _default =
     // 获取当前系统信息
     var sysInfo = uni.getSystemInfoSync();
     // 为 vw 窗口可用高度动态赋值
-    this.wh = sysInfo.windowHeight;
+    this.wh = sysInfo.windowHeight - 50;
     // 调用获取分类列表数据的方法
     this.getCateList();
   },
@@ -240,6 +265,12 @@ var _default =
     gotoGoodsList: function gotoGoodsList(item3) {
       uni.navigateTo({
         url: "/subpkg/goods_list/goods_list?cid=".concat(item3.cat_id) });
+
+    },
+    // 跳转到分包中的搜索页面
+    gotoSearch: function gotoSearch() {
+      uni.navigateTo({
+        url: '/subpkg/search/search' });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
